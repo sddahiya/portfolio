@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="600" viewBox="0 0 1024 600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1b26"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1024" height="600" fill="url(#bg)"/>
+  
+  <!-- Terminal Window -->
+  <rect x="40" y="30" width="944" height="540" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+  
+  <!-- Title Bar -->
+  <rect x="40" y="30" width="944" height="38" rx="10" fill="#161b22"/>
+  <rect x="40" y="58" width="944" height="10" fill="#161b22"/>
+  
+  <!-- Window Dots -->
+  <circle cx="68" cy="49" r="7" fill="#ff5f57"/>
+  <circle cx="90" cy="49" r="7" fill="#febc2e"/>
+  <circle cx="112" cy="49" r="7" fill="#28c840"/>
+  
+  <!-- Title Text -->
+  <text x="512" y="54" font-family="monospace" font-size="13" fill="#8b949e" text-anchor="middle">root@rhel9:~ — firewall-automation.sh</text>
+  
+  <!-- Terminal Content -->
+  <text font-family="'Courier New', monospace" font-size="14" fill="#8b949e">
+    <!-- Command 1 -->
+    <tspan x="60" y="95" fill="#00ff88">[root@rhel9 ~]#</tspan>
+    <tspan fill="#e4e4e7"> ./firewall-automation.sh --setup</tspan>
+    
+    <tspan x="60" y="120" fill="#00d4ff">╔══════════════════════════════════════════════════════════════╗</tspan>
+    <tspan x="60" y="140" fill="#00d4ff">║</tspan><tspan fill="#ff6b6b"> 🔥 RHEL FIREWALL AUTOMATION TOOLKIT v2.1                   </tspan><tspan fill="#00d4ff">║</tspan>
+    <tspan x="60" y="160" fill="#00d4ff">║</tspan><tspan fill="#8b949e">    Automated firewalld Zone &amp; Rule Configuration            </tspan><tspan fill="#00d4ff">║</tspan>
+    <tspan x="60" y="180" fill="#00d4ff">╚══════════════════════════════════════════════════════════════╝</tspan>
+    
+    <tspan x="60" y="210" fill="#febc2e">[INFO]</tspan><tspan fill="#e4e4e7"> Detecting active zones...</tspan>
+    <tspan x="60" y="230" fill="#28c840">[✓]</tspan><tspan fill="#e4e4e7"> Active zone: </tspan><tspan fill="#00ff88">public</tspan><tspan fill="#e4e4e7"> (interface: eth0)</tspan>
+
+    <!-- Command 2 -->
+    <tspan x="60" y="260" fill="#00ff88">[root@rhel9 ~]#</tspan>
+    <tspan fill="#e4e4e7"> firewall-cmd --zone=public --list-all</tspan>
+    
+    <tspan x="60" y="285" fill="#a855f7">public (active)</tspan>
+    <tspan x="60" y="305" fill="#8b949e">  target: </tspan><tspan fill="#ff6b6b">DROP</tspan>
+    <tspan x="60" y="325" fill="#8b949e">  interfaces: </tspan><tspan fill="#e4e4e7">eth0</tspan>
+    <tspan x="60" y="345" fill="#8b949e">  services: </tspan><tspan fill="#00ff88">ssh https dns</tspan>
+    <tspan x="60" y="365" fill="#8b949e">  ports: </tspan><tspan fill="#00ff88">8080/tcp 443/tcp</tspan>
+    <tspan x="60" y="385" fill="#8b949e">  rich rules:</tspan>
+    <tspan x="80" y="405" fill="#00d4ff">rule family="ipv4" source address="10.0.0.0/24" accept</tspan>
+    <tspan x="80" y="425" fill="#00d4ff">rule family="ipv4" source address="192.168.1.0/24" service name="ssh" log prefix="SSH" accept</tspan>
+
+    <!-- Status -->
+    <tspan x="60" y="455" fill="#00ff88">[root@rhel9 ~]#</tspan>
+    <tspan fill="#e4e4e7"> systemctl status firewalld</tspan>
+    <tspan x="60" y="480" fill="#8b949e">● firewalld.service - firewalld - dynamic firewall daemon</tspan>
+    <tspan x="60" y="500" fill="#8b949e">   Active: </tspan><tspan fill="#28c840">active (running)</tspan><tspan fill="#8b949e"> since Mon 2026-10-20 06:30:01 IST</tspan>
+    <tspan x="60" y="520" fill="#8b949e">   Main PID: 1842 (firewalld)</tspan>
+    
+    <tspan x="60" y="550" fill="#28c840">[✓] 12 rules applied  [✓] 3 zones configured  [✓] Logging enabled</tspan>
+  </text>
+</svg>
